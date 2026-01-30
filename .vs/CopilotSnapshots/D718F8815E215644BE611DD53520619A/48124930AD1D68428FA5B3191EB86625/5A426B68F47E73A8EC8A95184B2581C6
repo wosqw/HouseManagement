@@ -1,0 +1,109 @@
+﻿using System.Linq;
+using System;
+using System.IO;
+using System.Windows;
+using System.Windows.Interop;
+using System.Windows.Media.Imaging;
+
+namespace HuseManagement
+{
+    public partial class MainWindow : Window
+    {
+        private HousingManagementDB _context = new HousingManagementDB();
+
+        public MainWindow()
+        {
+            InitializeComponent();
+            // try load logo: prefer embedded icon bytes, otherwise try to find logo.png file next to app or in project tree
+            try
+            {
+                var iconBytes = Properties.Resources.icon;
+                if (iconBytes != null && iconBytes.Length > 0)
+                {
+                    var bi = new BitmapImage();
+                    using (var ms = new MemoryStream(iconBytes))
+                    {
+                        bi.BeginInit();
+                        bi.CacheOption = BitmapCacheOption.OnLoad;
+                        bi.StreamSource = ms;
+                        bi.EndInit();
+                        bi.Freeze();
+                    }
+                    logo.Source = bi;
+                }
+                else
+                {
+                    // search for logo.png in current and parent directories
+                    var baseDir = AppDomain.CurrentDomain.BaseDirectory;
+                    string found = null;
+                    var dir = new DirectoryInfo(baseDir);
+                    for (int i = 0; i < 4 && dir != null; i++)
+                    {
+                        var candidate = Path.Combine(dir.FullName, "logo.png");
+                        if (File.Exists(candidate))
+                        {
+                            found = candidate;
+                            break;
+                        }
+                        dir = dir.Parent;
+                    }
+                    if (found != null)
+                    {
+                        var bi = new BitmapImage(new Uri(found, UriKind.Absolute));
+                        logo.Source = bi;
+                    }
+                }
+            }
+            catch
+            {
+                // ignore if resource missing or conversion fails
+            }
+
+            LoadRequests();
+        }
+
+        private void LoadRequests()
+        {
+            // Include related entities so bindings to Owners.Houses and Employees.FullName work
+            var requests = _context.RepairRequests
+                .Include("Owners.Houses")
+                .Include("Employees")
+                .ToList();
+
+            RequestsListView.ItemsSource = requests;
+        }
+
+        private void AddRequest_Click(object sender, RoutedEventArgs e)
+        {
+            var newRequestWindow = new AddEditRequestWindow();
+            if (newRequestWindow.ShowDialog() == true)
+            {
+                LoadRequests();
+            }
+        }
+
+        private void EditRequest_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedRequest = RequestsListView.SelectedItem as RepairRequests;
+            if (selectedRequest != null)
+            {
+                var editRequestWindow = new AddEditRequestWindow(selectedRequest);
+                if (editRequestWindow.ShowDialog() == true)
+                {
+                    LoadRequests();
+                }
+            }
+        }
+
+        private void DeleteRequest_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedRequest = RequestsListView.SelectedItem as RepairRequests;
+            if (selectedRequest != null)
+            {
+                _context.RepairRequests.Remove(selectedRequest);
+                _context.SaveChanges();
+                LoadRequests();
+            }
+        }
+    }
+}

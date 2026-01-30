@@ -1,0 +1,69 @@
+﻿<Window x:Class="HuseManagement.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HuseManagement"
+        mc:Ignorable="d"
+        Title="Управление заявками"
+        Height="450"
+        Width="800"
+        Style="{StaticResource WindowStyle}"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+        <!-- Логотип компании (заполняется из ресурсов в коде) -->
+        <Image x:Name="TopLogo"
+               Width="200"
+               Height="100"
+               Margin="10"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top" />
+
+        <!-- Заголовок -->
+        <TextBlock Text="Список заявок"
+                   Style="{StaticResource TitleTextBlockStyle}"
+                   Margin="10,120,10,10"
+                   HorizontalAlignment="Center" />
+
+        <!-- Список заявок -->
+        <ListView x:Name="RequestsListView"
+                  Margin="10,160,10,10"
+                  Background="{StaticResource SecondaryBackgroundBrush}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Адрес" DisplayMemberBinding="{Binding Address}" />
+                    <GridViewColumn Header="ФИО заявителя" DisplayMemberBinding="{Binding ApplicantName}" />
+                    <GridViewColumn Header="Телефон" DisplayMemberBinding="{Binding Phone}" />
+                    <GridViewColumn Header="Описание" DisplayMemberBinding="{Binding Description}" />
+                    <GridViewColumn Header="Исполнитель" DisplayMemberBinding="{Binding Executor}" />
+                    <GridViewColumn Header="Статус" DisplayMemberBinding="{Binding Status}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <!-- Кнопки управления -->
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Bottom"
+                    Margin="10">
+            <Button Content="Добавить"
+                    Style="{StaticResource AccentButtonStyle}"
+                    Click="AddRequest_Click" />
+            <Button Content="Редактировать"
+                    Style="{StaticResource AccentButtonStyle}"
+                    Click="EditRequest_Click" />
+            <Button Content="Удалить"
+                    Style="{StaticResource AccentButtonStyle}"
+                    Click="DeleteRequest_Click" />
+        </StackPanel>
+    </Grid>
+</Window>

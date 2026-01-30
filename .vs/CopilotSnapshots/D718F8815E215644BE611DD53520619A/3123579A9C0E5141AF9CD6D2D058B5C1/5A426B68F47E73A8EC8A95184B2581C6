@@ -1,0 +1,55 @@
+﻿using System.Linq;
+using System.Windows;
+
+namespace HuseManagement
+{
+    public partial class MainWindow : Window
+    {
+        private HousingManagementDB _context = new HousingManagementDB();
+
+        public MainWindow()
+        {
+            InitializeComponent();
+            LoadRequests();
+        }
+
+        private void LoadRequests()
+        {
+            var requests = _context.RepairRequests.ToList();
+            RequestsListView.ItemsSource = requests;
+        }
+
+        private void AddRequest_Click(object sender, RoutedEventArgs e)
+        {
+            var newRequestWindow = new AddEditRequestWindow();
+            if (newRequestWindow.ShowDialog() == true)
+            {
+                LoadRequests();
+            }
+        }
+
+        private void EditRequest_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedRequest = RequestsListView.SelectedItem as RepairRequests;
+            if (selectedRequest != null)
+            {
+                var editRequestWindow = new AddEditRequestWindow(selectedRequest);
+                if (editRequestWindow.ShowDialog() == true)
+                {
+                    LoadRequests();
+                }
+            }
+        }
+
+        private void DeleteRequest_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedRequest = RequestsListView.SelectedItem as RepairRequests;
+            if (selectedRequest != null)
+            {
+                _context.RepairRequests.Remove(selectedRequest);
+                _context.SaveChanges();
+                LoadRequests();
+            }
+        }
+    }
+}

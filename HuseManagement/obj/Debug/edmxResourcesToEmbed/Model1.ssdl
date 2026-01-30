@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище HousingManagementDBModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Debts">
+    <Key>
+      <PropertyRef Name="DebtID" />
+    </Key>
+    <Property Name="DebtID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Owner" Type="int" Nullable="false" />
+    <Property Name="WaterDebt" Type="float" />
+    <Property Name="ElectricityDebt" Type="float" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Position" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Houses">
+    <Key>
+      <PropertyRef Name="HouseID" />
+    </Key>
+    <Property Name="HouseID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="NumberOfFloors" Type="int" Nullable="false" />
+    <Property Name="NumberOfApartments" Type="int" />
+    <Property Name="YearBuilt" Type="int" Nullable="false" />
+    <Property Name="Area" Type="float" Nullable="false" />
+    <Property Name="ManagementStartDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Owners">
+    <Key>
+      <PropertyRef Name="OwnerID" />
+    </Key>
+    <Property Name="OwnerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OwnerName" Type="nchar" MaxLength="200" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="20" />
+    <Property Name="ApartmentNumber" Type="int" Nullable="false" />
+    <Property Name="Address" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RepairRequests">
+    <Key>
+      <PropertyRef Name="RequestID" />
+    </Key>
+    <Property Name="RequestID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Address" Type="int" Nullable="false" />
+    <Property Name="ApartmentNumber" Type="int" Nullable="false" />
+    <Property Name="ProblemDescription" Type="text" Nullable="false" />
+    <Property Name="ResponsibleEmployee" Type="int" Nullable="false" />
+    <Property Name="RequestStatus" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreationDate" Type="date" Nullable="false" />
+    <Property Name="CompletionDate" Type="date" />
+  </EntityType>
+  <EntityType Name="Reports">
+    <Key>
+      <PropertyRef Name="ReportID" />
+    </Key>
+    <Property Name="ReportID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Owner" Type="int" Nullable="false" />
+    <Property Name="Period" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AmountCharged" Type="float" Nullable="false" />
+    <Property Name="AmountPaid" Type="float" />
+  </EntityType>
+  <Association Name="FK__Debts__Owner__5BE2A6F2">
+    <End Role="Owners" Type="Self.Owners" Multiplicity="1" />
+    <End Role="Debts" Type="Self.Debts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Owners">
+        <PropertyRef Name="OwnerID" />
+      </Principal>
+      <Dependent Role="Debts">
+        <PropertyRef Name="Owner" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Owners__Address__5EBF139D">
+    <End Role="Houses" Type="Self.Houses" Multiplicity="1" />
+    <End Role="Owners" Type="Self.Owners" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Houses">
+        <PropertyRef Name="HouseID" />
+      </Principal>
+      <Dependent Role="Owners">
+        <PropertyRef Name="Address" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RepairReq__Respo__14270015">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+    <End Role="RepairRequests" Type="Self.RepairRequests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="RepairRequests">
+        <PropertyRef Name="ResponsibleEmployee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Reports__Owner__6E01572D">
+    <End Role="Owners" Type="Self.Owners" Multiplicity="1" />
+    <End Role="Reports" Type="Self.Reports" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Owners">
+        <PropertyRef Name="OwnerID" />
+      </Principal>
+      <Dependent Role="Reports">
+        <PropertyRef Name="Owner" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RepairRequests_Owners">
+    <End Role="Owners" Type="Self.Owners" Multiplicity="1" />
+    <End Role="RepairRequests" Type="Self.RepairRequests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Owners">
+        <PropertyRef Name="OwnerID" />
+      </Principal>
+      <Dependent Role="RepairRequests">
+        <PropertyRef Name="ApartmentNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище HousingManagementDBModelContainer">
+    <EntitySet Name="Debts" EntityType="Self.Debts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Houses" EntityType="Self.Houses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Owners" EntityType="Self.Owners" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RepairRequests" EntityType="Self.RepairRequests" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Reports" EntityType="Self.Reports" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Debts__Owner__5BE2A6F2" Association="Self.FK__Debts__Owner__5BE2A6F2">
+      <End Role="Owners" EntitySet="Owners" />
+      <End Role="Debts" EntitySet="Debts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Owners__Address__5EBF139D" Association="Self.FK__Owners__Address__5EBF139D">
+      <End Role="Houses" EntitySet="Houses" />
+      <End Role="Owners" EntitySet="Owners" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RepairReq__Respo__14270015" Association="Self.FK__RepairReq__Respo__14270015">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="RepairRequests" EntitySet="RepairRequests" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Reports__Owner__6E01572D" Association="Self.FK__Reports__Owner__6E01572D">
+      <End Role="Owners" EntitySet="Owners" />
+      <End Role="Reports" EntitySet="Reports" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RepairRequests_Owners" Association="Self.FK_RepairRequests_Owners">
+      <End Role="Owners" EntitySet="Owners" />
+      <End Role="RepairRequests" EntitySet="RepairRequests" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

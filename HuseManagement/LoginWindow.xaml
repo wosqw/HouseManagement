@@ -1,0 +1,30 @@
+﻿<Window x:Class="HuseManagement.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Авторизация"
+        Height="300"
+        Width="450"
+        Style="{StaticResource WindowStyle}"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+        <Image x:Name="logo" Width="40" Height="32" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" Source="/HuseManagement;component/logo.png" />
+        <TextBlock Text="Авторизация" Style="{StaticResource TitleTextBlockStyle}" HorizontalAlignment="Center" Margin="0,10,0,0" />
+
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="300">
+            <TextBlock Text="Логин:" Style="{StaticResource TitleTextBlockStyle}" Margin="0,0,0,5" />
+            <TextBox x:Name="LoginTextBox" Width="260" Margin="0,0,0,15" Style="{StaticResource TextBoxStyle}" />
+
+            <Button Content="Войти" Width="120" Style="{StaticResource AccentButtonStyle}" HorizontalAlignment="Center" Click="LoginButton_Click" />
+        </StackPanel>
+    </Grid>
+</Window>
+

@@ -1,0 +1,56 @@
+﻿using System.Linq;
+using System.Windows;
+
+public partial class MainWindow : Window
+{
+    private ApplicationDbContext _context = new ApplicationDbContext();
+
+    public MainWindow()
+    {
+        InitializeComponent();
+        LoadRequests();
+    }
+
+    private void LoadRequests()
+    {
+        var requests = _context.Requests.ToList();
+        RequestsListView.ItemsSource = requests;
+    }
+
+    private void AddRequest_Click(object sender, RoutedEventArgs e)
+    {
+        // Логика для добавления новой заявки
+        var newRequestWindow = new AddEditRequestWindow();
+        if (newRequestWindow.ShowDialog() == true)
+        {
+            LoadRequests();
+        }
+    }
+
+    private void EditRequest_Click(object sender, RoutedEventArgs e)
+    {
+        // Логика для редактирования выбранной заявки
+        var selectedRequest = RequestsListView.SelectedItem as Request;
+        if (selectedRequest != null)
+        {
+            var editRequestWindow = new AddEditRequestWindow(selectedRequest);
+            if (editRequestWindow.ShowDialog() == true)
+            {
+                LoadRequests();
+            }
+        }
+    }
+
+    private void DeleteRequest_Click(object sender, RoutedEventArgs e)
+    {
+        // Логика для удаления выбранной заявки
+        var selectedRequest = RequestsListView.SelectedItem as Request;
+        if (selectedRequest != null)
+        {
+            _context.Requests.Remove(selectedRequest);
+            _context.SaveChanges();
+            LoadRequests();
+        }
+    }
+}
+

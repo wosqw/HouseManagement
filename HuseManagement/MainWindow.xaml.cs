@@ -1,0 +1,238 @@
+﻿using System.Linq;
+using System;
+using System.IO;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Interop;
+using System.Windows.Media.Imaging;
+
+namespace HuseManagement
+{
+    public partial class MainWindow : Window
+    {
+        private HousingManagementDB _context = HuseManagement.Data.HousingManagementDbContextSingleton.Instance;
+        private Employees _currentEmployee;
+        private Owners _currentOwner;
+        private bool _isAdmin = false;
+
+        public MainWindow()
+        {
+            InitializeComponent();
+            InitializeUi();
+        }
+
+        public MainWindow(Employees employee)
+        {
+            InitializeComponent();
+            _currentEmployee = employee;
+            _isAdmin = true;
+            InitializeUi();
+            ApplyRoleSettings();
+        }
+
+        public MainWindow(Owners owner)
+        {
+            InitializeComponent();
+            _currentOwner = owner;
+            _isAdmin = false;
+            InitializeUi();
+            ApplyRoleSettings();
+        }
+
+        private void InitializeUi()
+        {
+            try
+            {
+                var iconBytes = Properties.Resources.icon;
+                if (iconBytes != null && iconBytes.Length > 0)
+                {
+                    var bi = new BitmapImage();
+                    using (var ms = new MemoryStream(iconBytes))
+                    {
+                        bi.BeginInit();
+                        bi.CacheOption = BitmapCacheOption.OnLoad;
+                        bi.StreamSource = ms;
+                        bi.EndInit();
+                        bi.Freeze();
+                    }
+                    logo.Source = bi;
+                }
+                else
+                {
+                    var baseDir = AppDomain.CurrentDomain.BaseDirectory;
+                    string found = null;
+                    var dir = new DirectoryInfo(baseDir);
+                    for (int i = 0; i < 4 && dir != null; i++)
+                    {
+                        var candidate = Path.Combine(dir.FullName, "logo.png");
+                        if (File.Exists(candidate))
+                        {
+                            found = candidate;
+                            break;
+                        }
+                        dir = dir.Parent;
+                    }
+                    if (found != null)
+                    {
+                        var bi = new BitmapImage(new Uri(found, UriKind.Absolute));
+                        logo.Source = bi;
+                    }
+                }
+            }
+            catch
+            {
+            }
+
+            LoadRequests();
+        }
+
+        private void ApplyRoleSettings()
+        {
+            if (_isAdmin)
+            {
+                AddButton.Visibility = Visibility.Visible;
+                EditButton.Visibility = Visibility.Visible;
+                DeleteButton.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                AddButton.Visibility = Visibility.Visible;
+                EditButton.Visibility = Visibility.Collapsed;
+                DeleteButton.Visibility = Visibility.Collapsed;
+                var view = RequestsListView.View as GridView;
+                if (view != null)
+                {
+                    var employeesCol = view.Columns.FirstOrDefault(c => c.Header != null && c.Header.ToString() == "Исполнитель");
+                    if (employeesCol != null)
+                    {
+                        employeesCol.Width = 0;
+                    }
+                }
+            }
+        }
+
+        private void LoadRequests()
+        {
+            var requests = _context.RepairRequests
+                .Include("Owners.Houses")
+                .Include("Employees");
+            var executors = _context.Employees.Select(e => e.FullName).Distinct().ToList();
+            var execCombo = this.FindName("ExecutorFilterComboBox") as System.Windows.Controls.ComboBox;
+            if (execCombo != null)
+                execCombo.ItemsSource = executors;
+            
+            var statuses = _context.RepairRequests.Select(r => r.RequestStatus).Distinct().ToList();
+            var statusCombo = this.FindName("StatusFilterComboBox") as System.Windows.Controls.ComboBox;
+            if (statusCombo != null)
+                statusCombo.ItemsSource = statuses;
+
+            RequestsListView.ItemsSource = requests.ToList();
+        }
+
+        private void ApplyFilters_Click(object sender, RoutedEventArgs e)
+        {
+            System.Linq.IQueryable<RepairRequests> query = _context.RepairRequests.Include("Owners.Houses").Include("Employees");
+
+            var addrBox = this.FindName("AddressFilterTextBox") as System.Windows.Controls.TextBox;
+            var addressFilter = addrBox?.Text?.Trim();
+            if (addressFilter == "Адрес") addressFilter = string.Empty;
+            if (!string.IsNullOrEmpty(addressFilter))
+            {
+                query = query.Where(r => r.Owners != null && r.Owners.Houses != null && r.Owners.Houses.Address.Contains(addressFilter));
+            }
+            var execCombo = this.FindName("ExecutorFilterComboBox") as System.Windows.Controls.ComboBox;
+            var executor = execCombo?.SelectedItem as string;
+            if (!string.IsNullOrEmpty(executor))
+            {
+                query = query.Where(r => r.Employees != null && r.Employees.FullName == executor);
+            }
+            var statusCombo = this.FindName("StatusFilterComboBox") as System.Windows.Controls.ComboBox;
+            var status = statusCombo?.SelectedItem as string;
+            if (!string.IsNullOrEmpty(status))
+            {
+                query = query.Where(r => r.RequestStatus == status);
+            }
+            RequestsListView.ItemsSource = query.ToList();
+        }
+
+        private void ClearFilters_Click(object sender, RoutedEventArgs e)
+        {
+            var addr = this.FindName("AddressFilterTextBox") as System.Windows.Controls.TextBox;
+            if (addr != null) { addr.Text = "Адрес"; addr.Foreground = System.Windows.Media.Brushes.Gray; }
+            var exec = this.FindName("ExecutorFilterComboBox") as System.Windows.Controls.ComboBox;
+            if (exec != null) exec.SelectedItem = null;
+            var stat = this.FindName("StatusFilterComboBox") as System.Windows.Controls.ComboBox;
+            if (stat != null) stat.SelectedItem = null;
+            LoadRequests();
+        }
+
+        private void AddressFilter_GotFocus(object sender, RoutedEventArgs e)
+        {
+            var tb = sender as System.Windows.Controls.TextBox;
+            if (tb != null && tb.Text == "Адрес")
+            {
+                tb.Text = string.Empty;
+                tb.Foreground = System.Windows.Media.Brushes.Black;
+            }
+        }
+
+        private void AddressFilter_LostFocus(object sender, RoutedEventArgs e)
+        {
+            var tb = sender as System.Windows.Controls.TextBox;
+            if (tb != null && string.IsNullOrWhiteSpace(tb.Text))
+            {
+                tb.Text = "Адрес";
+                tb.Foreground = System.Windows.Media.Brushes.Gray;
+            }
+        }
+
+        private void AddRequest_Click(object sender, RoutedEventArgs e)
+        {
+            if (_isAdmin)
+            {
+                var newRequestWindow = new AddEditRequestWindow();
+                if (newRequestWindow.ShowDialog() == true)
+                {
+                    LoadRequests();
+                }
+            }
+            else
+            {
+                
+                var newRequestWindow = new AddEditRequestWindow(null, _currentOwner, true);
+                if (newRequestWindow.ShowDialog() == true)
+                {
+                    LoadRequests();
+                }
+            }
+        }
+
+        private void EditRequest_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedRequest = RequestsListView.SelectedItem as RepairRequests;
+            if (selectedRequest != null)
+            {
+                var editRequestWindow = new AddEditRequestWindow(selectedRequest);
+                if (editRequestWindow.ShowDialog() == true)
+                {
+                    LoadRequests();
+                }
+            }
+        }
+
+        private void DeleteRequest_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedRequest = RequestsListView.SelectedItem as RepairRequests;
+            if (selectedRequest != null)
+            {
+                var result = MessageBox.Show("Вы точно хотите удалить строку?", "Подтверждение удаления", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                if (result == MessageBoxResult.Yes)
+                {
+                    _context.RepairRequests.Remove(selectedRequest);
+                    _context.SaveChanges();
+                    LoadRequests();
+                }
+            }
+        }
+    }
+}

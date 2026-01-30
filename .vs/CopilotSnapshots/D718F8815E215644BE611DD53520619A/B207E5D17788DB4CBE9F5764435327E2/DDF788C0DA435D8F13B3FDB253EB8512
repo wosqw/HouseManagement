@@ -1,0 +1,54 @@
+﻿using System.Windows;
+
+namespace HuseManagement
+{
+    public partial class AddEditRequestWindow : Window
+    {
+        private RepairRequests _request;
+        private HousingManagementDB _context = new HousingManagementDB();
+        private bool _isOwnerMode = false;
+
+        public AddEditRequestWindow(RepairRequests request = null, Owners owner = null, bool isOwner = false)
+        {
+            InitializeComponent();
+            _request = request ?? new RepairRequests();
+            if (owner != null)
+            {
+                _request.Owners = owner;
+            }
+            _isOwnerMode = isOwner;
+            if (_isOwnerMode && string.IsNullOrEmpty(_request.RequestStatus))
+            {
+                _request.RequestStatus = "На рассмотрении";
+            }
+            DataContext = _request;
+
+            if (_isOwnerMode)
+            {
+                // owners cannot set status
+                StatusTextBox.IsEnabled = false;
+            }
+        }
+
+        private void Save_Click(object sender, RoutedEventArgs e)
+        {
+            if (_isOwnerMode)
+            {
+                _request.RequestStatus = "На рассмотрении";
+            }
+            if (_request.RequestID == 0)
+            {
+                _context.RepairRequests.Add(_request);
+            }
+            _context.SaveChanges();
+            DialogResult = true;
+            Close();
+        }
+
+        private void Cancel_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
+            Close();
+        }
+    }
+}

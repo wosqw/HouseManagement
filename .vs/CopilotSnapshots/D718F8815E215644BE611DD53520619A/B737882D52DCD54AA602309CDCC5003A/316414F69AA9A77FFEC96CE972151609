@@ -1,0 +1,164 @@
+﻿using System.Linq;
+using System;
+using System.IO;
+using System.Windows;
+using System.Windows.Interop;
+using System.Windows.Media.Imaging;
+
+namespace HuseManagement
+{
+    public partial class MainWindow : Window
+    {
+        private HousingManagementDB _context = new HousingManagementDB();
+        private Employees _currentEmployee;
+        private Owners _currentOwner;
+        private bool _isAdmin = false;
+
+        public MainWindow()
+        {
+            InitializeComponent();
+            InitializeUi();
+        }
+
+        public MainWindow(Employees employee)
+        {
+            InitializeComponent();
+            _currentEmployee = employee;
+            _isAdmin = true;
+            InitializeUi();
+            ApplyRoleSettings();
+        }
+
+        public MainWindow(Owners owner)
+        {
+            InitializeComponent();
+            _currentOwner = owner;
+            _isAdmin = false;
+            InitializeUi();
+            ApplyRoleSettings();
+        }
+
+        private void InitializeUi()
+        {
+            try
+            {
+                var iconBytes = Properties.Resources.icon;
+                if (iconBytes != null && iconBytes.Length > 0)
+                {
+                    var bi = new BitmapImage();
+                    using (var ms = new MemoryStream(iconBytes))
+                    {
+                        bi.BeginInit();
+                        bi.CacheOption = BitmapCacheOption.OnLoad;
+                        bi.StreamSource = ms;
+                        bi.EndInit();
+                        bi.Freeze();
+                    }
+                    logo.Source = bi;
+                }
+                else
+                {
+                    var baseDir = AppDomain.CurrentDomain.BaseDirectory;
+                    string found = null;
+                    var dir = new DirectoryInfo(baseDir);
+                    for (int i = 0; i < 4 && dir != null; i++)
+                    {
+                        var candidate = Path.Combine(dir.FullName, "logo.png");
+                        if (File.Exists(candidate))
+                        {
+                            found = candidate;
+                            break;
+                        }
+                        dir = dir.Parent;
+                    }
+                    if (found != null)
+                    {
+                        var bi = new BitmapImage(new Uri(found, UriKind.Absolute));
+                        logo.Source = bi;
+                    }
+                }
+            }
+            catch
+            {
+            }
+
+            LoadRequests();
+        }
+
+        private void ApplyRoleSettings()
+        {
+            if (_isAdmin)
+            {
+                ControlsPanel.Visibility = System.Windows.Visibility.Visible;
+                AddButton.Visibility = System.Windows.Visibility.Visible;
+                EditButton.Visibility = System.Windows.Visibility.Visible;
+                DeleteButton.Visibility = System.Windows.Visibility.Visible;
+            }
+            else
+            {
+                ControlsPanel.Visibility = System.Windows.Visibility.Collapsed;
+                // for owners allow only submission: show Add button but hide others
+                AddButton.Visibility = System.Windows.Visibility.Visible;
+                EditButton.Visibility = System.Windows.Visibility.Collapsed;
+                DeleteButton.Visibility = System.Windows.Visibility.Collapsed;
+                // hide columns or other admin-only UI: for simplicity hide Employees column
+                // Find column by header text and collapse width
+                foreach (var col in ((GridView)RequestsListView.View).Columns)
+                {
+                    if (col.Header != null && col.Header.ToString() == "Исполнитель")
+                    {
+                        col.Width = 0;
+                    }
+                }
+            }
+        }
+
+        private void LoadRequests()
+        {
+            // Include related entities so bindings to Owners.Houses and Employees.FullName work
+            var requests = _context.RepairRequests
+                .Include("Owners.Houses")
+                .Include("Employees")
+                .ToList();
+
+            RequestsListView.ItemsSource = requests;
+        }
+
+        private void AddRequest_Click(object sender, RoutedEventArgs e)
+        {
+            var newRequestWindow = new AddEditRequestWindow();
+            if (newRequestWindow.ShowDialog() == true)
+            {
+                LoadRequests();
+            }
+        }
+
+        private void EditRequest_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedRequest = RequestsListView.SelectedItem as RepairRequests;
+            if (selectedRequest != null)
+            {
+                var editRequestWindow = new AddEditRequestWindow(selectedRequest);
+                if (editRequestWindow.ShowDialog() == true)
+                {
+                    LoadRequests();
+                }
+            }
+        }
+
+        private void DeleteRequest_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedRequest = RequestsListView.SelectedItem as RepairRequests;
+            if (selectedRequest != null)
+            {
+                var result = MessageBox.Show("Вы точно хотите удалить строку?", "Подтверждение удаления", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                if (result == MessageBoxResult.Yes)
+                {
+                    _context.RepairRequests.Remove(selectedRequest);
+                    _context.SaveChanges();
+                    LoadRequests();
+                }
+            }
+        }
+    }
+}

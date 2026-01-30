@@ -1,0 +1,31 @@
+ 
+namespace HuseManagement
+{
+    using System;
+    using System.Collections.Generic;
+    
+    public partial class Owners
+    {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Owners()
+        {
+            this.Debts = new HashSet<Debts>();
+            this.Reports = new HashSet<Reports>();
+            this.RepairRequests = new HashSet<RepairRequests>();
+        }
+    
+        public int OwnerID { get; set; }
+        public string OwnerName { get; set; }
+        public string Phone { get; set; }
+        public int ApartmentNumber { get; set; }
+        public int Address { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Debts> Debts { get; set; }
+        public virtual Houses Houses { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Reports> Reports { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RepairRequests> RepairRequests { get; set; }
+    }
+}

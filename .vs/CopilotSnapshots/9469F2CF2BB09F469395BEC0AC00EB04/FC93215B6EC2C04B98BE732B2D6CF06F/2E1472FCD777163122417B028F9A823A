@@ -1,0 +1,31 @@
+﻿using System.Windows;
+
+public partial class AddEditRequestWindow : Window
+{
+    private Request _request;
+    private ApplicationDbContext _context = new ApplicationDbContext();
+
+    public AddEditRequestWindow(Request request = null)
+    {
+        InitializeComponent();
+        _request = request ?? new Request();
+        DataContext = _request;
+    }
+
+    private void Save_Click(object sender, RoutedEventArgs e)
+    {
+        if (_request.Id == 0)
+        {
+            _context.Requests.Add(_request);
+        }
+        _context.SaveChanges();
+        DialogResult = true;
+        Close();
+    }
+
+    private void Cancel_Click(object sender, RoutedEventArgs e)
+    {
+        DialogResult = false;
+        Close();
+    }
+}

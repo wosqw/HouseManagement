@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="315dd36110dc4e21a7d70b970d101ed5" Name="Diagram1">
+        <EntityTypeShape EntityType="HousingManagementDBModel.Debts" Width="1.5" PointX="5.25" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HousingManagementDBModel.Employees" Width="1.5" PointX="6" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HousingManagementDBModel.Houses" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HousingManagementDBModel.Owners" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HousingManagementDBModel.RepairRequests" Width="1.5" PointX="8.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HousingManagementDBModel.Reports" Width="1.5" PointX="5.25" PointY="9.5" IsExpanded="true" />
+        <AssociationConnector Association="HousingManagementDBModel.FK__Debts__Owner__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="HousingManagementDBModel.FK__RepairReq__Respo__14270015" ManuallyRouted="false" />
+        <AssociationConnector Association="HousingManagementDBModel.FK__Owners__Address__5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="HousingManagementDBModel.FK__Reports__Owner__6E01572D" ManuallyRouted="false" />
+        <AssociationConnector Association="HousingManagementDBModel.FK_RepairRequests_Owners" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,76 @@
+﻿<Window x:Class="HuseManagement.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="450" Width="800"
+        Style="{DynamicResource WindowStyle}">
+    <Grid>
+        <ListView x:Name="RequestsListView">
+            <!-- ItemTemplate and other properties here -->
+        </ListView>
+        <Button Content="Add Request" Click="AddRequest_Click"/>
+        <Button Content="Edit Request" Click="EditRequest_Click"/>
+        <Button Content="Delete Request" Click="DeleteRequest_Click"/>
+    </Grid>
+</Window>
+
+this.Style = (Style)FindResource("WindowStyle");
+
+
+using System.Linq;
+using System.Windows;
+
+namespace HuseManagement
+{
+    public partial class MainWindow : Window
+    {
+        private HousingManagementDB _context = new HousingManagementDB();
+
+        public MainWindow()
+        {
+            InitializeComponent();
+            LoadRequests();
+        }
+
+        private void LoadRequests()
+        {
+            var requests = _context.RepairRequests.ToList();
+            RequestsListView.ItemsSource = requests;
+        }
+
+        private void AddRequest_Click(object sender, RoutedEventArgs e)
+        {
+            var newRequestWindow = new AddEditRequestWindow();
+            if (newRequestWindow.ShowDialog() == true)
+            {
+                LoadRequests();
+            }
+        }
+
+        private void EditRequest_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedRequest = RequestsListView.SelectedItem as RepairRequests;
+            if (selectedRequest != null)
+            {
+                var editRequestWindow = new AddEditRequestWindow(selectedRequest);
+                if (editRequestWindow.ShowDialog() == true)
+                {
+                    LoadRequests();
+                }
+            }
+        }
+
+        private void DeleteRequest_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedRequest = RequestsListView.SelectedItem as RepairRequests;
+            if (selectedRequest != null)
+            {
+                _context.RepairRequests.Remove(selectedRequest);
+                _context.SaveChanges();
+                LoadRequests();
+            }
+        }
+    }
+}
+
+this.Style = (Style)FindResource("WindowStyle");
+

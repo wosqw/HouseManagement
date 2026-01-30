@@ -1,0 +1,53 @@
+﻿using System;
+
+namespace HuseManagement.Data
+{
+    /// <summary>
+    /// Thread-safe singleton provider for the EF context <see cref="HousingManagementDB"/>.
+    /// Note: Entity Framework DbContext is NOT thread-safe. Use this singleton only when
+    /// you ensure single-threaded access or short-lived operations on the context.
+    /// For UI apps prefer short-lived contexts per operation; this singleton is convenient
+    /// for small desktop apps where you ensure sequential access.
+    /// </summary>
+    public static class HousingManagementDbContextSingleton
+    {
+        private static volatile HousingManagementDB instance;
+        private static readonly object syncRoot = new object();
+
+        /// <summary>
+        /// Gets the singleton instance of <see cref="HousingManagementDB"/>. Instance is created lazily.
+        /// </summary>
+        public static HousingManagementDB Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    lock (syncRoot)
+                    {
+                        if (instance == null)
+                        {
+                            instance = new HousingManagementDB();
+                        }
+                    }
+                }
+                return instance;
+            }
+        }
+
+        /// <summary>
+        /// Disposes the current singleton instance (if created) and allows recreation on next access.
+        /// </summary>
+        public static void DisposeInstance()
+        {
+            lock (syncRoot)
+            {
+                if (instance != null)
+                {
+                    instance.Dispose();
+                    instance = null;
+                }
+            }
+        }
+    }
+}

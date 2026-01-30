@@ -1,0 +1,379 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\safet\\source\\repos\\HuseManagement\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{262E85C5-38C7-4F22-9935-0A46B5492FFC}|HuseManagement\\HuseManagement.csproj|C:\\Users\\safet\\source\\repos\\HuseManagement\\husemanagement\\window1.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{262E85C5-38C7-4F22-9935-0A46B5492FFC}|HuseManagement\\HuseManagement.csproj|solutionrelative:husemanagement\\window1.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{262E85C5-38C7-4F22-9935-0A46B5492FFC}|HuseManagement\\HuseManagement.csproj|C:\\Users\\safet\\source\\repos\\HuseManagement\\husemanagement\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{262E85C5-38C7-4F22-9935-0A46B5492FFC}|HuseManagement\\HuseManagement.csproj|solutionrelative:husemanagement\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{262E85C5-38C7-4F22-9935-0A46B5492FFC}|HuseManagement\\HuseManagement.csproj|c:\\users\\safet\\source\\repos\\husemanagement\\husemanagement\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{262E85C5-38C7-4F22-9935-0A46B5492FFC}|HuseManagement\\HuseManagement.csproj|solutionrelative:husemanagement\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{262E85C5-38C7-4F22-9935-0A46B5492FFC}|HuseManagement\\HuseManagement.csproj|c:\\users\\safet\\source\\repos\\husemanagement\\husemanagement\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{262E85C5-38C7-4F22-9935-0A46B5492FFC}|HuseManagement\\HuseManagement.csproj|solutionrelative:husemanagement\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{262E85C5-38C7-4F22-9935-0A46B5492FFC}|HuseManagement\\HuseManagement.csproj|c:\\users\\safet\\source\\repos\\husemanagement\\husemanagement\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{262E85C5-38C7-4F22-9935-0A46B5492FFC}|HuseManagement\\HuseManagement.csproj|solutionrelative:husemanagement\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{262E85C5-38C7-4F22-9935-0A46B5492FFC}|HuseManagement\\HuseManagement.csproj|C:\\Users\\safet\\source\\repos\\HuseManagement\\husemanagement\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{262E85C5-38C7-4F22-9935-0A46B5492FFC}|HuseManagement\\HuseManagement.csproj|solutionrelative:husemanagement\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{262E85C5-38C7-4F22-9935-0A46B5492FFC}|HuseManagement\\HuseManagement.csproj|C:\\Users\\safet\\source\\repos\\HuseManagement\\husemanagement\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{262E85C5-38C7-4F22-9935-0A46B5492FFC}|HuseManagement\\HuseManagement.csproj|solutionrelative:husemanagement\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{262E85C5-38C7-4F22-9935-0A46B5492FFC}|HuseManagement\\HuseManagement.csproj|C:\\Users\\safet\\source\\repos\\HuseManagement\\husemanagement\\addeditrequestwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{262E85C5-38C7-4F22-9935-0A46B5492FFC}|HuseManagement\\HuseManagement.csproj|solutionrelative:husemanagement\\addeditrequestwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{262E85C5-38C7-4F22-9935-0A46B5492FFC}|HuseManagement\\HuseManagement.csproj|C:\\Users\\safet\\source\\repos\\HuseManagement\\husemanagement\\data\\housingmanagementdbcontextsingleton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{262E85C5-38C7-4F22-9935-0A46B5492FFC}|HuseManagement\\HuseManagement.csproj|solutionrelative:husemanagement\\data\\housingmanagementdbcontextsingleton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{262E85C5-38C7-4F22-9935-0A46B5492FFC}|HuseManagement\\HuseManagement.csproj|C:\\Users\\safet\\source\\repos\\HuseManagement\\husemanagement\\owners.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{262E85C5-38C7-4F22-9935-0A46B5492FFC}|HuseManagement\\HuseManagement.csproj|solutionrelative:husemanagement\\owners.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{262E85C5-38C7-4F22-9935-0A46B5492FFC}|HuseManagement\\HuseManagement.csproj|C:\\Users\\safet\\source\\repos\\HuseManagement\\husemanagement\\houses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{262E85C5-38C7-4F22-9935-0A46B5492FFC}|HuseManagement\\HuseManagement.csproj|solutionrelative:husemanagement\\houses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{262E85C5-38C7-4F22-9935-0A46B5492FFC}|HuseManagement\\HuseManagement.csproj|C:\\Users\\safet\\source\\repos\\HuseManagement\\husemanagement\\styles.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{262E85C5-38C7-4F22-9935-0A46B5492FFC}|HuseManagement\\HuseManagement.csproj|solutionrelative:husemanagement\\styles.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{262E85C5-38C7-4F22-9935-0A46B5492FFC}|HuseManagement\\HuseManagement.csproj|C:\\Users\\safet\\source\\repos\\HuseManagement\\husemanagement\\properties\\resources.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
+      "RelativeMoniker": "D:0:0:{262E85C5-38C7-4F22-9935-0A46B5492FFC}|HuseManagement\\HuseManagement.csproj|solutionrelative:husemanagement\\properties\\resources.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{262E85C5-38C7-4F22-9935-0A46B5492FFC}|HuseManagement\\HuseManagement.csproj|C:\\Users\\safet\\source\\repos\\HuseManagement\\husemanagement\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{262E85C5-38C7-4F22-9935-0A46B5492FFC}|HuseManagement\\HuseManagement.csproj|solutionrelative:husemanagement\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{262E85C5-38C7-4F22-9935-0A46B5492FFC}|HuseManagement\\HuseManagement.csproj|C:\\Users\\safet\\source\\repos\\HuseManagement\\husemanagement\\properties\\resources.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{262E85C5-38C7-4F22-9935-0A46B5492FFC}|HuseManagement\\HuseManagement.csproj|solutionrelative:husemanagement\\properties\\resources.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{262E85C5-38C7-4F22-9935-0A46B5492FFC}|HuseManagement\\HuseManagement.csproj|C:\\Users\\safet\\source\\repos\\HuseManagement\\husemanagement\\debts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{262E85C5-38C7-4F22-9935-0A46B5492FFC}|HuseManagement\\HuseManagement.csproj|solutionrelative:husemanagement\\debts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{262E85C5-38C7-4F22-9935-0A46B5492FFC}|HuseManagement\\HuseManagement.csproj|C:\\Users\\safet\\source\\repos\\HuseManagement\\husemanagement\\model1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{262E85C5-38C7-4F22-9935-0A46B5492FFC}|HuseManagement\\HuseManagement.csproj|solutionrelative:husemanagement\\model1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{262E85C5-38C7-4F22-9935-0A46B5492FFC}|HuseManagement\\HuseManagement.csproj|C:\\Users\\safet\\source\\repos\\HuseManagement\\husemanagement\\model1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{262E85C5-38C7-4F22-9935-0A46B5492FFC}|HuseManagement\\HuseManagement.csproj|solutionrelative:husemanagement\\model1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{262E85C5-38C7-4F22-9935-0A46B5492FFC}|HuseManagement\\HuseManagement.csproj|C:\\Users\\safet\\source\\repos\\HuseManagement\\husemanagement\\model1.context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{262E85C5-38C7-4F22-9935-0A46B5492FFC}|HuseManagement\\HuseManagement.csproj|solutionrelative:husemanagement\\model1.context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{262E85C5-38C7-4F22-9935-0A46B5492FFC}|HuseManagement\\HuseManagement.csproj|C:\\Users\\safet\\source\\repos\\HuseManagement\\husemanagement\\repairrequests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{262E85C5-38C7-4F22-9935-0A46B5492FFC}|HuseManagement\\HuseManagement.csproj|solutionrelative:husemanagement\\repairrequests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{262E85C5-38C7-4F22-9935-0A46B5492FFC}|HuseManagement\\HuseManagement.csproj|C:\\Users\\safet\\source\\repos\\HuseManagement\\husemanagement\\employees.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{262E85C5-38C7-4F22-9935-0A46B5492FFC}|HuseManagement\\HuseManagement.csproj|solutionrelative:husemanagement\\employees.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{262E85C5-38C7-4F22-9935-0A46B5492FFC}|HuseManagement\\HuseManagement.csproj|c:\\users\\safet\\source\\repos\\husemanagement\\husemanagement\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{262E85C5-38C7-4F22-9935-0A46B5492FFC}|HuseManagement\\HuseManagement.csproj|solutionrelative:husemanagement\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\safet\\source\\repos\\HuseManagement\\HuseManagement\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "HuseManagement\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\safet\\source\\repos\\HuseManagement\\HuseManagement\\MainWindow.xaml.cs",
+              "RelativeToolTip": "HuseManagement\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-29T23:22:13.217Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AssemblyInfo.cs",
+              "DocumentMoniker": "C:\\Users\\safet\\source\\repos\\HuseManagement\\HuseManagement\\Properties\\AssemblyInfo.cs",
+              "RelativeDocumentMoniker": "HuseManagement\\Properties\\AssemblyInfo.cs",
+              "ToolTip": "C:\\Users\\safet\\source\\repos\\HuseManagement\\HuseManagement\\Properties\\AssemblyInfo.cs",
+              "RelativeToolTip": "HuseManagement\\Properties\\AssemblyInfo.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAswBUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-29T23:18:10.095Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\safet\\source\\repos\\HuseManagement\\HuseManagement\\App.xaml.cs",
+              "RelativeDocumentMoniker": "HuseManagement\\App.xaml.cs",
+              "ToolTip": "C:\\Users\\safet\\source\\repos\\HuseManagement\\HuseManagement\\App.xaml.cs",
+              "RelativeToolTip": "HuseManagement\\App.xaml.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAMBUwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-29T23:13:55.023Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LoginWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\safet\\source\\repos\\HuseManagement\\HuseManagement\\LoginWindow.xaml",
+              "RelativeDocumentMoniker": "HuseManagement\\LoginWindow.xaml",
+              "ToolTip": "C:\\Users\\safet\\source\\repos\\HuseManagement\\HuseManagement\\LoginWindow.xaml",
+              "RelativeToolTip": "HuseManagement\\LoginWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-01-20T09:14:05.017Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\safet\\source\\repos\\HuseManagement\\HuseManagement\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "HuseManagement\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\safet\\source\\repos\\HuseManagement\\HuseManagement\\MainWindow.xaml",
+              "RelativeToolTip": "HuseManagement\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-01-16T07:45:47.357Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Houses.cs",
+              "DocumentMoniker": "C:\\Users\\safet\\source\\repos\\HuseManagement\\HuseManagement\\Houses.cs",
+              "RelativeDocumentMoniker": "HuseManagement\\Houses.cs",
+              "ToolTip": "C:\\Users\\safet\\source\\repos\\HuseManagement\\HuseManagement\\Houses.cs",
+              "RelativeToolTip": "HuseManagement\\Houses.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-20T08:20:11.302Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Model1.edmx [Diagram1]",
+              "DocumentMoniker": "C:\\Users\\safet\\source\\repos\\HuseManagement\\HuseManagement\\Model1.edmx",
+              "RelativeDocumentMoniker": "HuseManagement\\Model1.edmx",
+              "ToolTip": "C:\\Users\\safet\\source\\repos\\HuseManagement\\HuseManagement\\Model1.edmx [Diagram1]",
+              "RelativeToolTip": "HuseManagement\\Model1.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2026-01-16T10:22:36.726Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Window1.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\safet\\source\\repos\\HuseManagement\\HuseManagement\\Window1.xaml.cs",
+              "RelativeDocumentMoniker": "HuseManagement\\Window1.xaml.cs",
+              "ToolTip": "C:\\Users\\safet\\source\\repos\\HuseManagement\\HuseManagement\\Window1.xaml.cs",
+              "RelativeToolTip": "HuseManagement\\Window1.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-16T11:04:38.026Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoginWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\safet\\source\\repos\\HuseManagement\\HuseManagement\\LoginWindow.xaml.cs",
+              "RelativeDocumentMoniker": "HuseManagement\\LoginWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\safet\\source\\repos\\HuseManagement\\HuseManagement\\LoginWindow.xaml.cs",
+              "RelativeToolTip": "HuseManagement\\LoginWindow.xaml.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwCcAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-20T09:15:35.789Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "HousingManagementDbContextSingleton.cs",
+              "DocumentMoniker": "C:\\Users\\safet\\source\\repos\\HuseManagement\\HuseManagement\\Data\\HousingManagementDbContextSingleton.cs",
+              "RelativeDocumentMoniker": "HuseManagement\\Data\\HousingManagementDbContextSingleton.cs",
+              "ToolTip": "C:\\Users\\safet\\source\\repos\\HuseManagement\\HuseManagement\\Data\\HousingManagementDbContextSingleton.cs",
+              "RelativeToolTip": "HuseManagement\\Data\\HousingManagementDbContextSingleton.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-16T11:19:10.072Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "RepairRequests.cs",
+              "DocumentMoniker": "C:\\Users\\safet\\source\\repos\\HuseManagement\\HuseManagement\\RepairRequests.cs",
+              "RelativeDocumentMoniker": "HuseManagement\\RepairRequests.cs",
+              "ToolTip": "C:\\Users\\safet\\source\\repos\\HuseManagement\\HuseManagement\\RepairRequests.cs",
+              "RelativeToolTip": "HuseManagement\\RepairRequests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAABBwAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-20T08:21:39.646Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Debts.cs",
+              "DocumentMoniker": "C:\\Users\\safet\\source\\repos\\HuseManagement\\HuseManagement\\Debts.cs",
+              "RelativeDocumentMoniker": "HuseManagement\\Debts.cs",
+              "ToolTip": "C:\\Users\\safet\\source\\repos\\HuseManagement\\HuseManagement\\Debts.cs",
+              "RelativeToolTip": "HuseManagement\\Debts.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAABBwAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-20T08:21:02.06Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AddEditRequestWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\safet\\source\\repos\\HuseManagement\\HuseManagement\\AddEditRequestWindow.xaml",
+              "RelativeDocumentMoniker": "HuseManagement\\AddEditRequestWindow.xaml",
+              "ToolTip": "C:\\Users\\safet\\source\\repos\\HuseManagement\\HuseManagement\\AddEditRequestWindow.xaml",
+              "RelativeToolTip": "HuseManagement\\AddEditRequestWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-01-16T11:01:23.366Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Model1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\safet\\source\\repos\\HuseManagement\\HuseManagement\\Model1.Designer.cs",
+              "RelativeDocumentMoniker": "HuseManagement\\Model1.Designer.cs",
+              "ToolTip": "C:\\Users\\safet\\source\\repos\\HuseManagement\\HuseManagement\\Model1.Designer.cs",
+              "RelativeToolTip": "HuseManagement\\Model1.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAABBwAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-20T08:21:10.628Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Employees.cs",
+              "DocumentMoniker": "C:\\Users\\safet\\source\\repos\\HuseManagement\\HuseManagement\\Employees.cs",
+              "RelativeDocumentMoniker": "HuseManagement\\Employees.cs",
+              "ToolTip": "C:\\Users\\safet\\source\\repos\\HuseManagement\\HuseManagement\\Employees.cs",
+              "RelativeToolTip": "HuseManagement\\Employees.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAABBwAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-20T08:24:37.571Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Owners.cs",
+              "DocumentMoniker": "C:\\Users\\safet\\source\\repos\\HuseManagement\\HuseManagement\\Owners.cs",
+              "RelativeDocumentMoniker": "HuseManagement\\Owners.cs",
+              "ToolTip": "C:\\Users\\safet\\source\\repos\\HuseManagement\\HuseManagement\\Owners.cs",
+              "RelativeToolTip": "HuseManagement\\Owners.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-20T08:24:46.503Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Model1.cs",
+              "DocumentMoniker": "C:\\Users\\safet\\source\\repos\\HuseManagement\\HuseManagement\\Model1.cs",
+              "RelativeDocumentMoniker": "HuseManagement\\Model1.cs",
+              "ToolTip": "C:\\Users\\safet\\source\\repos\\HuseManagement\\HuseManagement\\Model1.cs",
+              "RelativeToolTip": "HuseManagement\\Model1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAABBwAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-20T08:21:16.988Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Model1.Context.cs",
+              "DocumentMoniker": "C:\\Users\\safet\\source\\repos\\HuseManagement\\HuseManagement\\Model1.Context.cs",
+              "RelativeDocumentMoniker": "HuseManagement\\Model1.Context.cs",
+              "ToolTip": "C:\\Users\\safet\\source\\repos\\HuseManagement\\HuseManagement\\Model1.Context.cs",
+              "RelativeToolTip": "HuseManagement\\Model1.Context.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAABBwAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-20T08:21:23.042Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Resources.resx",
+              "DocumentMoniker": "C:\\Users\\safet\\source\\repos\\HuseManagement\\HuseManagement\\Properties\\Resources.resx",
+              "RelativeDocumentMoniker": "HuseManagement\\Properties\\Resources.resx",
+              "ToolTip": "C:\\Users\\safet\\source\\repos\\HuseManagement\\HuseManagement\\Properties\\Resources.resx",
+              "RelativeToolTip": "HuseManagement\\Properties\\Resources.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2026-01-16T07:55:47.17Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\safet\\source\\repos\\HuseManagement\\HuseManagement\\App.xaml",
+              "RelativeDocumentMoniker": "HuseManagement\\App.xaml",
+              "ToolTip": "C:\\Users\\safet\\source\\repos\\HuseManagement\\HuseManagement\\App.xaml",
+              "RelativeToolTip": "HuseManagement\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-01-16T08:00:55.649Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Styles.xaml",
+              "DocumentMoniker": "C:\\Users\\safet\\source\\repos\\HuseManagement\\HuseManagement\\Styles.xaml",
+              "RelativeDocumentMoniker": "HuseManagement\\Styles.xaml",
+              "ToolTip": "C:\\Users\\safet\\source\\repos\\HuseManagement\\HuseManagement\\Styles.xaml",
+              "RelativeToolTip": "HuseManagement\\Styles.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-01-16T10:48:03.957Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Resources.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\safet\\source\\repos\\HuseManagement\\HuseManagement\\Properties\\Resources.Designer.cs",
+              "RelativeDocumentMoniker": "HuseManagement\\Properties\\Resources.Designer.cs",
+              "ToolTip": "C:\\Users\\safet\\source\\repos\\HuseManagement\\HuseManagement\\Properties\\Resources.Designer.cs",
+              "RelativeToolTip": "HuseManagement\\Properties\\Resources.Designer.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAMBdwDQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-16T11:19:10.172Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

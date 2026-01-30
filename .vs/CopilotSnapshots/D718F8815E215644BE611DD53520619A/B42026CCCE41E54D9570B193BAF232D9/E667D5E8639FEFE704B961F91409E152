@@ -1,0 +1,41 @@
+﻿using HuseManagement;
+using System.Linq;
+using System.Windows;
+
+public partial class LoginWindow : Window
+{
+    private HouseManagementDB _context = new HouseManagementDBContext();
+
+    public LoginWindow()
+    {
+        InitializeComponent();
+    }
+
+    private void LoginButton_Click(object sender, RoutedEventArgs e)
+    {
+        string login = LoginTextBox.Text;
+
+        // Проверка в базе данных
+        var employee = _context.Employees.FirstOrDefault(e => e.Login == login);
+        var owner = _context.Owners.FirstOrDefault(o => o.Login == login);
+
+        if (employee != null)
+        {
+            // Авторизация как администратор
+            var mainWindow = new MainWindow(employee);
+            mainWindow.Show();
+            Close();
+        }
+        else if (owner != null)
+        {
+            // Авторизация как жилец
+            var mainWindow = new MainWindow(owner);
+            mainWindow.Show();
+            Close();
+        }
+        else
+        {
+            MessageBox.Show("Неверный логин или пароль.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+    }
+}
